@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MB Store SN</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <!--Navbar-->
+    <header>
+      <nav class="navbar fixed-top">
+        <div class="container">
+          <a href="index.html" class="btn btn-light">Home</a>
+          <a
+            class="btn"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasExample"
+            role="button"
+            aria-controls="offcanvasExample"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="#ffffff"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+              ></path>
+            </svg>
+          </a>
+          <a class="navbar-brand mx-auto" href="#">
+            <img
+              src="images/MBS7.png"
+              alt="Bootstrap"
+              width="120"
+              height="92"
+            />
+          </a>
+          <!-- panier -->
+          <div class="panier">
+            <section id="boutonpanier">
+              <a < href="panier.html">
+                <button type="button" class="btn position-relative">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="#ffffff"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                    ></path>
+                  </svg>
+                  <span
+                    class="position-absolute top-0 star-100 translate-middle badge"
+                    >0</span
+                  >
+                </button>
+              </a>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <!-- sidebar -->
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Produits</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <hr />
+        <div class="offcanvas-body">
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#home-collapse"
+                aria-expanded="true"
+              >
+                Tissus
+              </button>
+              <div class="collapse show" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="#" class="link-dark rounded">Brodés</a></li>
+                  <hr />
+                  <li><a href="#" class="link-dark rounded">Getzner</a></li>
+                  <hr />
+                  <li><a href="#" class="link-dark rounded">Waxs</a></li>
+                </ul>
+              </div>
+            </li>
+            <hr />
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse"
+                aria-expanded="false"
+              >
+                Abayas et Jellabas
+              </button>
+              <hr />
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="#" class="link-dark rounded">Abayas</a></li>
+                  <hr />
+                  <li><a href="#" class="link-dark rounded">Jellabas</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#orders-collapse"
+                aria-expanded="false"
+              >
+                Accessoires
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="#" class="link-dark rounded">Parfums</a></li>
+                  <hr />
+                  <li><a href="#" class="link-dark rounded">Voiles</a></li>
+                  <hr />
+                  <li><a href="#" class="link-dark rounded">Sandales</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#account-collapse"
+                aria-expanded="false"
+              ></button>
+              A propos de nous
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <p>
+                      MB Store Sn est une boutique en ligne pour habillements
+                      hommes et femmes. Nous nous assurons de vous offrir le
+                      meilleur rapport qualité/prix sur le marché.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- contenu -->
+    <main>
+      <div class="container">
+        <div class="categorie">
+          <h1 class="soustitre">Produits</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <h1 class="soustitre">Parcourir</h1>
+            <div class="list-group">
+              <a
+                href="produits.html#sectionbrode"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Brodés
+              </a>
+              <a
+                href="produits.html#sectionwax"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Waxs
+              </a>
+              <a
+                href="produits.html#sectiongetzner"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Getzners
+              </a>
+              <a
+                href="produits.html#sectionabaya"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Abayas
+              </a>
+              <a
+                href="produits.html#sectionjellaba"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Jellabas
+              </a>
+              <a
+                href="produits.html#sectionvoile"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Voiles
+              </a>
+              <a
+                href="produits.html#sectionparfum"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Parfums
+              </a>
+              <a
+                href="produits.html#sectionsandale"
+                type="button"
+                class="list-group-item list-group-item-action bg-transparent mb-5"
+              >
+                Sandales
+              </a>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <!-- premier produit -->
+            <section class="row mb-3" id="sectionbrode">
+              <div class="col">
+                <div class="card">
+                  <img src="images/brode.webp" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Brodé Autriche</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit"> 5yards 25 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- deuxieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/brodeautriche.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Brodé Autriche</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit"> 5yards 25 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- troisieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img src="images/brode2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Brodé coton</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit"> 4 metre 10 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- quatrieme produit -->
+            <section class="row mb-3" id="sectionwax">
+              <div class="col">
+                <div class="card">
+                  <img src="images/wax2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Wax</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit"> 6 yards 6 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- cinquieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img src="images/wax3.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Wax</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit">6 yards 6 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- sixieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img src="images/wax4.jpeg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Wax</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit">6 yards 6 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- septieme produit -->
+            <section class="row mb-3" id="sectiongetzner">
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/getznerblanc.webp"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Getzner couleur blanche</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit">Metre 11 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- huitieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/getznerbleu.webp"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span>Getzner couleur bleue</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit"> Metre 11 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- neuvieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/geznerrose.webp"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Getzner couleur rose</span>
+                      <hr />
+                      <div class="price d-flex">
+                        <span class="prixunit">Metre 11 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- dixieme produit -->
+            <section class="row mb-3" id="sectionabaya">
+              <div class="col">
+                <div class="card">
+                  <img src="images/abaya.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span>Abaya Dubai</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">25 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- onzieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img src="images/abaya2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span>Abaya Dubai</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">25 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- douxieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img src="images/abaya3.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span>Abaya Dubai</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">25 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- treizieme produit -->
+            <section class="row mb-3" id="sectionjellaba">
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/jellaba2.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Jellaba</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">6 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- quatorzieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/jellaba3.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Jellaba</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">10 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- quinzieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/jellaba4.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Jellaba</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">6 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- seizieme produit -->
+            <section class="row mb-3" id="sectionparfum">
+              <div class="col">
+                <div class="card">
+                  <img src="images/asad.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Parfum Homme Asad</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">18 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- dix-septieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img src="images/yara.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span>Parfum Femme Yara</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">18 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- dix-huitieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/parfum3.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Parfum Femme Musk Mood</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">15 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- dix-neuvieme produit -->
+            <section class="row mb-3" id="sectionvoile">
+              <div class="col">
+                <div class="card">
+                  <img src="images/voile2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> voiles en mousseline</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit">1 500 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- vingtieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img src="images/voile4.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Voiles en mousseline de soie</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit"> 1 500 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- vingt et unieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/voilecachemire.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Brodé Autriche</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit"> 1 500 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- vingt-deuxieme produit -->
+            <section class="row mb-3" id="sectionsandale">
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/sandale2.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Sandales perlées</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit"> 6 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- vingt-troisieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/sandale3.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Sandales en cuir</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit"> 8 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- vingt-quatrieme produit -->
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="images/sandale4.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <div class="description">
+                      <span> Sandales en cuir noires</span>
+                      <hr />
+                      <div class="price d-flex justify-content-between">
+                        <span class="prixunit"> 15 000 XOF</span>
+                        <a
+                          href="produits.html#boutonpanier"
+                          class="btn btn-outline-warning"
+                        >
+                          Ajouter au panier
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- pied de page -->
+
+    <footer class="footer">
+      <div class="contact-info">
+        <h3>Contactez-nous</h3>
+        <hr />
+        <p>Téléphone : +221 78 431 07 25</p>
+      </div>
+      <div class="social-icons">
+        <span><i class="ph ph-instagram-logo">mb_store_sn</i></span>
+        <span><i class="ph ph-whatsapp-logo"> </i>78 431 07 25</span>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MB Store SN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <!--Navbar-->
+    <header>
+      <nav class="navbar fixed-top">
+        <div class="container">
+          <a
+            class="btn"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasExample"
+            role="button"
+            aria-controls="offcanvasExample"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="#ffffff"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+              ></path>
+            </svg>
+          </a>
+          <a class="navbar-brand mx-auto" href="#">
+            <img
+              src="images/MBS7.png"
+              alt="Bootstrap"
+              width="120"
+              height="92"
+            />
+          </a>
+          <!-- panier -->
+          <div class="panier">
+            <section id="boutonpanier">
+              <a < href="panier.html">
+                <button type="button" class="btn position-relative">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="#ffffff"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                    ></path>
+                  </svg>
+                  <span
+                    class="position-absolute top-0 star-100 translate-middle badge"
+                    >0</span
+                  >
+                </button>
+              </a>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <!-- sidebar -->
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Produits</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <hr />
+        <div class="offcanvas-body">
+          <ul class="list-unstyled ps-0">
+            <li class="mb-2">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#home-collapse"
+                aria-expanded="true"
+              >
+                Tissus
+              </button>
+              <div class="collapse show" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <a href="produits.html" class="link-dark rounded">Brodés</a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a href="produits.html" class="link-dark rounded"
+                      >Getzner</a
+                    >
+                  </li>
+                  <hr />
+                  <li>
+                    <a href="produits.html" class="link-dark rounded">Waxs</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <hr />
+            <li class="mb-2">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse"
+                aria-expanded="false"
+              >
+                Abayas et Jellabas
+              </button>
+              <hr />
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <a href="produits.html" class="link-dark rounded">Abayas</a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a href="produits.html" class="link-dark rounded"
+                      >Jellabas</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-2">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#orders-collapse"
+                aria-expanded="false"
+              >
+                Accessoires
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <a href="produits.html" class="link-dark rounded"
+                      >Parfums</a
+                    >
+                  </li>
+                  <hr />
+                  <li>
+                    <a href="produits.html" class="link-dark rounded">Voiles</a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a href="produits.html" class="link-dark rounded"
+                      >Sandales</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-2">
+              <button
+                class="btn btn-toggle align-items-center rounded collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#account-collapse"
+                aria-expanded="false"
+              ></button>
+              A propos de nous
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li>
+                    <p>
+                      MB Store Sn est une boutique en ligne pour habillements
+                      hommes et femmes. Nous nous assurons de vous offrir le
+                      meilleur rapport qualité/prix sur le marché.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- contenu de la page -->
+    <main>
+      <!-- titre acceuil -->
+      <div class="titre">
+        <h1 class="mx-auto mt-5 text-center">
+          Soyez chic sans effort avec MB Store SN
+        </h1>
+      </div>
+      <!-- trois produits phares carousel section -->
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="images/bdautriche.jpg"
+              class="d-block carousel-image"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="text">Brodé Autriche</h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/abaya1.jpg"
+              class="d-block carousel-image"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="text">Abaya</h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/yara.jpg"
+              class="d-block carousel-image"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="text">Parfums</h3>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- Catégories -->
+      <div class="container">
+        <div class="categorie">
+          <h1 class="soustitre">Catégories</h1>
+        </div>
+        <div class="row">
+          <!-- premier produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/getzners.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Getzners</h5>
+                <a
+                  href="produits.html#sectiongetzner"
+                  class="btn btn-outline-warning"
+                  >Autres couleurs</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- deuxieme produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/wax1.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Waxs</h5>
+                <a
+                  href="produits.html#sectionwax"
+                  class="btn btn-outline-warning"
+                >
+                  Autres motifs</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- troisieme produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/brodes.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Brodés Autriche</h5>
+                <a
+                  href="produits.html#sectionbrode"
+                  class="btn btn-outline-warning"
+                  >Autres motifs</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- quatrieme produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/abaya2.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Abayas</h5>
+                <a
+                  href="produits.html#sectionabaya"
+                  class="btn btn-outline-warning"
+                  >Autres modéles</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- cinquieme produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/jellaba2.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Jellabas</h5>
+                <a
+                  href="produits.html#sectionjellaba"
+                  class="btn btn-outline-warning"
+                  >Autres modéles</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- sixieme produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/parfum3.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Parfums</h5>
+                <a
+                  href="produits.html#sectionparfum"
+                  class="btn btn-outline-warning"
+                  >Autres senteurs</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- septieme produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/voile3.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Voiles mousselines</h5>
+                <a
+                  href="produits.html#sectionparfum"
+                  class="btn btn-outline-warning"
+                  >Autres couleurs</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- huitieme produit -->
+          <div class="col-md-3">
+            <div class="card m-2">
+              <img src="images/sandale1.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Sandales</h5>
+                <a
+                  href="produits.html#sectionsanadale"
+                  class="btn btn-outline-warning"
+                  >Autres modéles</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="title title-bottom">
+        Nous vous offrons un large gamme de produits pour vous sublimer à bas
+        prix!
+      </div>
+    </main>
+    <!-- pied de page -->
+    <footer>
+      <footer class="footer">
+        <div class="contact-info">
+          <h3>Contactez-nous</h3>
+          <hr />
+          <p>Téléphone : +221 78 431 07 25</p>
+        </div>
+        <div class="social-icons">
+          <span><i class="ph ph-instagram-logo">mb_store_sn</i></span>
+          <span><i class="ph ph-whatsapp-logo"> </i>78 431 07 25</span>
+        </div>
+      </footer>
+    </footer>
+    <script src="main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
